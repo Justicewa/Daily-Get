@@ -1,0 +1,29 @@
+用来解决以下问题:
+	1.文件的安全问题
+	2.文件不利于数据查询和管理
+	3.文件不利于存储海量数据
+	4.文件在程序中控制不方便
+	
+MySQL->DB->表
+
+创建数据库:
+	creat database + 数据库名字;
+
+进入数据库:
+	use + 数据库名字;
+	
+建数据表:
+	create table 名字 (
+		变量名 类型
+		id		int,
+		name	varchar(20),   //可变长的char
+		gender	varchar(1)
+	); 
+	
+插入数据:
+	insert into gy(id) values(2016);
+	
+select * from 表名  // * 表示显示所有
+
+查看数据库支持的字符集
+	show charset\G;
