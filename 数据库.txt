@@ -1,0 +1,17 @@
+  1 /*
+  2  * 封装一堆以及编译的代码,链接库函数
+  3  * 生成动态库: gcc --share child1.o child2.o -o libmychild.so //lib是前缀 .so是后缀
+  4  *         gcc -fPIC -c child.c -o child1.o // 进行编译 -fpic 报错后再用的,产生位置无关代码
+  5  * 生成静态库: ar -rc libmychild.a child1.o child2.o
+  6  *            ar:静态库生成的链接器 -c是创建 -r模块替换 lib前缀, .a是后缀
+  7  * 
+  8  * 库的使用:
+  9  *      1.生成可执行程序时--库的搜索路径 /lib64
+ 10  *                    gcc main.c -o main -L. -lmychild  //指定链接时,库的搜索路径
+ 11  *                    生成可执行程序时,需要将第三方库放到指定路径下/lib64
+ 12  *                    设置环境变量
+ 13  *      2.运行可执行程序时--动态库的加载路径
+ 14  *                    该程序若是动态连接生成,运行时要到指定目录下加载动态库 /lib64 /usr/lib64
+ 15  *                                                                                            
+ 16  */
+~               
